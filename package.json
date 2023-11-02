@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.440.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -22,7 +23,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "screenshot": "storycap --serverCmd \"storybook -p 6006\" http://localhost:6006",
+    "regression": "reg-suit run \"storybook -p 6006\" http://localhost:6006"
   },
   "eslintConfig": {
     "extends": [
@@ -44,6 +47,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.22.15",
     "@storybook/addon-essentials": "^7.5.1",
     "@storybook/addon-interactions": "^7.5.1",
     "@storybook/addon-links": "^7.5.1",
@@ -53,10 +57,17 @@
     "@storybook/react": "^7.5.1",
     "@storybook/react-webpack5": "^7.5.1",
     "@storybook/testing-library": "^0.2.2",
+    "@types/react-test-renderer": "^18.0.5",
     "babel-plugin-named-exports-order": "^0.0.2",
     "eslint-plugin-storybook": "^0.6.15",
     "prop-types": "^15.8.1",
+    "react-test-renderer": "^18.2.0",
+    "reg-keygen-git-hash-plugin": "^0.12.2",
+    "reg-notify-github-plugin": "^0.12.2",
+    "reg-publish-s3-plugin": "^0.12.2",
+    "reg-suit": "^0.12.2",
     "storybook": "^7.5.1",
+    "storycap": "^4.2.0",
     "webpack": "^5.89.0"
   }
 }
