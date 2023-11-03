@@ -24,8 +24,8 @@
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "screenshot": "storycap --serverCmd \"storybook -p 6006\" http://localhost:6006",
-    "regression": "reg-suit run \"storybook -p 6006\" http://localhost:6006"
+    "screenshot": "storycap --serverCmd \"storybook dev -p 6006\" http://localhost:6006",
+    "regression": "reg-suit run \"storybook dev -p 6006\" http://localhost:6006"
   },
   "eslintConfig": {
     "extends": [
