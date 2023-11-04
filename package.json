@@ -25,7 +25,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "screenshot": "storycap --serverCmd \"storybook dev -p 6006\" http://localhost:6006",
-    "regression": "reg-suit run \"storybook dev -p 6006\" http://localhost:6006"
+    "regression": "reg-suit run \"storybook dev -p 6006\" http://localhost:6006",
+    "cypress:open": "cypress open"
   },
   "eslintConfig": {
     "extends": [
@@ -59,6 +60,7 @@
     "@storybook/testing-library": "^0.2.2",
     "@types/react-test-renderer": "^18.0.5",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "cypress": "^13.4.0",
     "eslint-plugin-storybook": "^0.6.15",
     "prop-types": "^15.8.1",
     "react-test-renderer": "^18.2.0",

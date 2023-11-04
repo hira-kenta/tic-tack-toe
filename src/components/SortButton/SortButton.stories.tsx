@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import SortButton from "./SortButton";
+import { useState } from "react";
 
 const meta: Meta<typeof SortButton> = {
     title: "tic-tac-toe/SortButton",
@@ -10,7 +11,16 @@ const meta: Meta<typeof SortButton> = {
     tags: ['autodocs'],
     args: {
         ascOrder: true,
-    }
+    },
+    decorators: [
+        (_SortButton, context) => {
+            const [ascOrder, setAscOrder] = useState<boolean>(context.args.ascOrder);
+
+            return(
+                <_SortButton args={{...context.args, ascOrder, setAscOrder}} />
+            )
+        }
+    ]
 }
 
 export default meta;

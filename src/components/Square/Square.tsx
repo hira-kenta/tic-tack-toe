@@ -23,7 +23,8 @@ const Square = ({isWinning, value, onSquareClick}: Props) => {
     return "square";
   }
     return (
-      <button 
+      <button
+        data-e2e="square"
         className={getClassName()}
         onClick={onSquareClick}
       >
