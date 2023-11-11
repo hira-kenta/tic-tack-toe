@@ -14,7 +14,7 @@ describe('盤面操作', () => {
     cy.get('[data-e2e=square]').eq(2).click();
     cy.get('[data-e2e=square]').eq(6).click();
 
-    cy.get('.status').contains('Winner: X')
+    cy.get('[data-e2e=status]').should('have.text','Winner: X');
   });
 
   it('引き分け時に"Draw..."が表示される', () =>{
@@ -30,6 +30,6 @@ describe('盤面操作', () => {
     cy.get('[data-e2e=square]').eq(8).click();
     cy.get('[data-e2e=square]').eq(7).click();
 
-    cy.get('.status').contains('Draw...')
+    cy.get('[data-e2e=status]').should('have.text','Draw...');
   });
 })
