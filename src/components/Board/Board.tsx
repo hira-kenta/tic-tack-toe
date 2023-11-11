@@ -53,7 +53,7 @@ const Board = ({xIsNext, squares, onPlay}: Props) => {
   
     return (
     <>
-      <div className="status">{status}</div>
+      <div data-e2e="status" className="status">{status}</div>
       {Array(3).fill(null).map((_, row) => (
         <div className="board-row" key={row}>
           {Array(3).fill(null).map((_, col) => {

@@ -3,27 +3,30 @@ import Board from "../Board/Board";
 import History from "../History/History";
 import React from "react";
 
+type Props = {
+  /** 移動履歴 */
+  history: string[][],
+  /** 移動位置 */
+  locations: string[],
+  /** 現在移動位置 */
+  currentMove: number,
+  /** Xの順番かどうか */
+  xIsNext:  boolean,
+  /** 現在のマス */
+  currentSquares: string[],
+  /** 現在位置を設定する */
+  setCurrentMove: (currentMove: number) => void,
+  /** 現在位置、移動履歴を更新する関数 */
+  handlePlay: (nextSqaures: string[], location: {row: number, column: number}) => void;
+}
+
 /**
  * OXゲームを行うコンポーネント
  * - OXを入力する盤面と入力の履歴情報が表示される  
  * - 履歴情報から特定の盤面の再現をすることが可能
  * @returns 
  */
-const Game = () => {
-    const [history, setHistory] = useState<string[][]>([Array(9).fill('')]);
-    const [locations, setLocations] = useState<string[]>(['']);
-    const [currentMove, setCurrentMove] = useState<number>(0);
-    const xIsNext = currentMove % 2 === 0;
-    const currentSquares: string[] = history[currentMove];
-  
-    const handlePlay = (nextSquares: string[], location: {row: number, column: number}) => {
-      const nextHistory: string[][] = [...history.slice(0, currentMove + 1), nextSquares]
-      const currentLocation: string[] = [...locations.slice(0, currentMove + 1), `(${location.row},${location.column})`];
-      setHistory(nextHistory);
-      setLocations(currentLocation);
-      setCurrentMove(nextHistory.length - 1);
-    }
-
+const Game = ({history, locations, currentMove, xIsNext, currentSquares, setCurrentMove, handlePlay}: Props) => {
     return (
       <div className="game">
         <div className="game-board">
