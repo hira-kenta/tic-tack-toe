@@ -47,7 +47,7 @@ const History = ({currentMove, setCurrentMove, locations, history }: Props) => {
     return (
     <>
         <SortButton ascOrder={ascOrder} setAscOrder={setAscOrder}/>
-        <ol>{ascOrder ? moves: moves.reverse() }</ol>
+        <ol data-e2e='histories'>{ascOrder ? moves: moves.reverse() }</ol>
     </>
     )
 }

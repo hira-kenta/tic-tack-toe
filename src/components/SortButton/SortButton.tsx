@@ -17,7 +17,7 @@ type Props = {
  */
 const SortButton = ({ascOrder, setAscOrder}: Props) => {
   return (
-    <button onClick={() => setAscOrder(!ascOrder)} className="sortButton">{ascOrder ? "ASC": "DESC"}</button>
+    <button onClick={() => setAscOrder(!ascOrder)} className="sortButton" data-e2e="sortButton">{ascOrder ? "ASC": "DESC"}</button>
   )
 }
 
